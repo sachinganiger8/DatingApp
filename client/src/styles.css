@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-tabs>li>a{
+background: none !important;
+border: 0 !important;
+font-weight: bold;
+}
+
+.member-tabset>.nav-tabs>li:hover{
+    border-bottom: 4px solid #e95420;
+}
+
+.member-tabset>.nav-tabs>li.active{
+    border-bottom: 4px solid #e95420;
+    position: relative;
+}
+
+.member-tabset>.nav-tabs>li.active>a{
+    border:0 !important;
+}
+
+.member-tabset>.tab-content{
+    margin-top: -3px;
+    background-color: none;
+    border:0;
+    border-top:1px solid gray;
+    padding:15px 0px;
+}
