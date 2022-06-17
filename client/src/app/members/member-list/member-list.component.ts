@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Member } from 'src/app/_models/member';
 import { MemberService } from 'src/app/_services/member.service';
 import { environment } from 'src/environments/environment';
@@ -10,17 +11,11 @@ import { environment } from 'src/environments/environment';
 })
 export class MemberListComponent implements OnInit {
   baseUrl=environment.apiUrl;
-  members:Member[];
+  members$:Observable<Member[]>;
 
   constructor(private memberService:MemberService) { }
 
   ngOnInit(): void {
-    this.loadMembers();
-  }
-
-  loadMembers(){
-     this.memberService.getMembers().subscribe(members=>{
-       this.members=members;
-     });
+    this.members$=this.memberService.getMembers();
   }
 }
