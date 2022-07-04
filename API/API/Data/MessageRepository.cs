@@ -47,7 +47,7 @@ namespace API.Data
             {
                 "Inbox" => query.Where(u => u.Recipient.UserName == messageParams.Username && u.RecipientDeleted==false),
                 "Outbox" => query.Where(u => u.Sender.UserName == messageParams.Username && u.SenderDeleted==false),
-                _ => query.Where(u => u.Recipient.UserName == messageParams.Username && u.DateRead == null && u.RecipientDeleted!=null)
+                _ => query.Where(u => u.Recipient.UserName == messageParams.Username && u.DateRead == null && u.RecipientDeleted!=true)
             };
 
             var messages = query.ProjectTo<MessageDTO>(_mapper.ConfigurationProvider);

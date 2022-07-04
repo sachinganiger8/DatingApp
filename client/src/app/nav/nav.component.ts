@@ -11,7 +11,7 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
   model: any = {
     username: 'lisa',
-    password: 'Password'
+    password: 'Pa$$w0rd'
   };
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
